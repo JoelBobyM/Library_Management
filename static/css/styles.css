@@ -32,12 +32,16 @@ body{
 
 .navbar .logo{
 	text-align: center;
-	font-size: 2.3em;
+	font-size: 1.6em;
 	font-weight: bold;
-}
-.navbar .logo{
-    cursor: pointer;
+	cursor: pointer;
     margin-right: auto;
+}
+
+.navbar .logo span{
+	font-size: 1.5em;
+	margin-top: 0;
+	padding-top: 0;
 }
 
 .navbar .nav__links{
@@ -72,17 +76,30 @@ body{
     background-color: rgba(0, 136, 169, 1);
 }
 
+/* login */
+.index_spacer{
+	height:200px
+}
+.signin{
+	height: 880px;
+}
 
-
-
+@media (min-width: 767px) {
+	.index_spacer{
+		display: none;
+	}
+	.signin{
+		height:540px;
+	}
+}
 section{
     position: relative;
     background-color:rgb(226, 201, 135);
     margin-top: 0;
     margin-bottom: 0;
-	padding-bottom: 65px;
-	
 }
+
+
 
 .modal-container .main .msg{
 	color: white;
@@ -199,6 +216,71 @@ section{
 	transform: scale(.6);
 }
 
+
+
+  /* Index page */
+
+  .search-container {
+	align-items: center;
+	width: 700px;
+	background: #fff;
+	border-radius: 5px;
+	height: 65px;
+	display: flex;
+	padding: 10px;
+	box-shadow: 0 8px 6px -10px #b3c6ff;
+	margin:auto;
+	height :70px;
+	margin-bottom: 30px;
+}
+
+/* Dropdown styling */
+.category-dropdown {
+	margin-right: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 5px;
+	background-color: #fff;
+	height: 60px;
+	width: 120px;
+	
+}
+
+/* Search input styling */
+.search-input {
+	flex-grow: 1;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 5px;
+}
+
+/* Search button styling (optional) */
+.search-button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	padding: 8px 15px;
+	cursor: pointer;
+}
+
+/* Styling for dropdown arrow (optional) */
+.category-dropdown::after {
+	content: "\25BC"; /* Unicode down arrow character */
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+}
+
+/* Fav Book */
+
+.books{
+	vertical-align: middle;
+	padding-bottom: 20px;
+	height:110%;
+}
+
 .books h1
 {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
@@ -210,20 +292,20 @@ section{
 }
 .card-container {
 	display: flex; /* Display cards in a horizontal row */
-	overflow-x: auto; /* Allow horizontal scrolling if nee 	ded */
+	flex-wrap: wrap;
 	justify-content: center; 
-	padding:30px
+	margin-bottom: auto;
 }
 
 .card {
 	box-shadow: 0 10px 20px 0 #000;/* Add a subtle shadow for depth */
-	margin-left: auto;
-	margin-right: auto;
+	margin : auto;
 	position: relative;
 	overflow: hidden;
 	border-radius: 20px;
 	height: 450px;
 	width: 300px;
+	margin-bottom: 50px;
 }
 
 .card:hover .overlay{

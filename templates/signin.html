@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no" media="(min-width:768px)">
+    <meta name="viewport" content="width=767, initial-scale=1.0" media="(max-width:767px)">
+    <title>e-Library | Login</title>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css" />
+</head>
+<body>
+  <header class="navbar">
+      <a href="#" class="logo">CMPS <span>&escr;</span>-Library</a>
+      <nav>
+          <ul class="nav__links">
+              <li>
+                  <a href="/">Home</a>
+                  <a href="#">About Us</a>
+              </li>
+          </ul>
+      </nav>
+  </header>
+  <div class="index_spacer"></div>
+  <section class = "signin">
+      <div class="modal-container">
+        <div class="main">  	
+          <input type="checkbox" id="chk" aria-hidden="true">
+          <div class="signup">
+            <form action="/client-side.html" method="POST">
+              <label for="chk" aria-hidden="true">Login</label>
+              <input type="id" name="id" placeholder="Admission Number" required value="{{id}}">
+              <input type="password" name="password" placeholder="Password" required>
+              <button type="submit">Login</button>
+              {% if msg_lin %}
+                <p class="msg">&#x26A0; {{ msg_lin }}</p>
+              {% endif %}
+            </form>
+          </div>
+          <div class="login">
+            <form required method="post" action="/">
+              <label for="chk" aria-hidden="true">Sign up</label>
+              <input type="text" name="fullname" placeholder="Full Name" required>
+              <input type="id" name="id" placeholder="Admission Number" required>
+              <input type="password" name="password" placeholder="Password" required>
+              <button type="submit">Sign up</button>
+              {% if msg_sup %}
+                <p class="msg">&#x26A0; {{ msg_sup }}</p>
+              {% endif %}
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+  </body>
+</html>
