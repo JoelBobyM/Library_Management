@@ -1,0 +1,266 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Index page */
+
+/* Nav-Bar */
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #24252A;
+    font-family: Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.navbar li, .navbar a, .navbar button{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 25px;
+    padding-bottom: 35px;
+}
+
+.navbar .logo{
+	text-align: center;
+	font-size: 2.3em;
+	font-weight: bold;
+}
+.navbar .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.navbar .nav__links{
+    list-style: none;
+}
+
+.navbar .nav__links li{
+    display: inline-block;
+    
+}
+
+.navbar .nav__links li a{
+    transition: all 0.3s ease 0s;
+    padding: 0 20px;
+}
+
+.navbar .nav__links li a:hover{
+    color: #0088a9;
+}
+
+.navbar .cta button{
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-left: 20px;
+}
+
+.navbar .cta button:hover{
+    background-color: rgba(0, 136, 169, 1);
+}
+
+
+
+
+section{
+    position: relative;
+    background-color:rgb(226, 201, 135);
+    margin-top: 0;
+    margin-bottom: 0;
+	padding-bottom: 65px;
+	
+}
+
+.modal-container .main .msg{
+	color: white;
+	font-size: 14px;
+	justify-content: center;
+	display: flex;
+	margin: 5px auto;
+	padding: 0px;
+	border: none;
+	outline: none;
+}
+.modal-container 
+{
+    position:relative;
+	align-items: center;
+	font-family: 'Jost', sans-serif;
+    display:grid;
+    justify-content: center;
+    background-color: #2b1b18;
+    left: 50%;
+    margin-top: 300px;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height:500px;
+    border-radius: 10px;
+    overflow: visible;
+  }
+
+.main{
+	width: 400px;
+	height: 500px;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+
+.modal-container .main #chk{
+	display: none;
+}
+
+.modal-container .main .signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+.modal-container .main label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	margin-bottom: 40px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+.modal-container .main .signup input{
+	margin : 40px auto;
+	padding: 40px auto;
+}
+
+.modal-container .main input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+.modal-container .main button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 30px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+.modal-container .main button:hover{
+	background: #6d44b8;
+}
+.modal-container .main .login{
+	height: 460px;
+	background: rgb(226, 201, 135);
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.modal-container .main .login label{
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+.modal-container .main #chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+.modal-container .main #chk:checked ~ .login label{
+	transform: scale(1);	
+}
+.modal-container .main #chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+
+.books h1
+{
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+	color: #2b1b18; 
+	text-align: center;
+	font-size: 3.5em;;
+	margin-top: 10px;
+	padding-top: 24px;
+}
+.card-container {
+	display: flex; /* Display cards in a horizontal row */
+	overflow-x: auto; /* Allow horizontal scrolling if nee 	ded */
+	justify-content: center; 
+	padding:30px
+}
+
+.card {
+	box-shadow: 0 10px 20px 0 #000;/* Add a subtle shadow for depth */
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	overflow: hidden;
+	border-radius: 20px;
+	height: 450px;
+	width: 300px;
+}
+
+.card:hover .overlay{
+	opacity: 1;
+	transform: scale(1);
+  }
+  
+  .overlay{
+	position: absolute;
+	background-color: #272727d2;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	transform: scale(1.3);
+	opacity: 0;
+	transition: transform .4s ease 0s;
+  }
+  
+  .overlay h2{
+	position: absolute;
+	left : 40%;
+	bottom: 10px;
+	transform: translate(-50%, -50%);
+	font-weight: bold;
+	font-size: 2em;
+	color: #fff;
+	font-family: Sans-serif;
+  }
+  
+  .card img{
+	transition: transform .8s ease;
+	width: 100%; /* Make the image width fit the container */
+    height: 100%; /* Make the image height fit the container */
+    display: block; /* Remove any extra spacing below the image */
+	object-fit: cover; /* Maintain the aspect ratio and cover the container */
+  }
+  
+  .card:hover img{
+	transform: scale(1.1);
+  }
