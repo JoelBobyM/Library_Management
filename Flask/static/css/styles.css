@@ -1,9 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-/* Index page */
 
-/* Nav-Bar */
+
 
 body{
     margin: 0;
@@ -14,6 +13,7 @@ body{
     line-height: 1.6;
 }
 
+/* Nav-Bar */
 .navbar li, .navbar a, .navbar button{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -75,6 +75,114 @@ body{
 .navbar .cta button:hover{
     background-color: rgba(0, 136, 169, 1);
 }
+
+/* Footer */
+
+.footer {
+	display: flex;
+	flex-flow: row wrap;	
+	padding: 0px 0px 20px 30px;
+	color: #ffffff;
+	background-color: #2b1b18;
+	border-top: 1px solid #e5e5e5;
+  }
+  
+  .footer > * {
+	flex: 1 100%;
+  }
+  
+  .footer__addr {
+	padding-right: 50px;
+	flex: 4;
+  }
+  .footer__addr p {
+    text-align: justify; /* Justify the text content inside the .footer__addr */
+}
+  
+  .footer__logo {
+	font-family: 'Pacifico', cursive;
+	font-weight: 1200;
+	text-transform:capitalize;
+	font-size: 2.8em;
+	padding-bottom: 0;
+	margin-bottom: 0;
+  }
+  
+  .nav__title {
+	font-weight:bolder;
+	font-size: 20px;
+	font-style: oblique;
+  }
+  
+  
+  .footer ul {
+	list-style: none;
+	padding-left: 0;
+	
+  }
+  
+  .footer li {
+	line-height: 2em;
+  }
+  
+  .footer a {
+	text-decoration: none;
+  }
+  
+  .footer__nav {
+	display: flex;
+  flex-flow: row wrap;
+  margin-right: 20px;
+	padding-left: 0;
+	align-items:center;
+  }
+  
+  
+  .nav__ul a {
+	color: lightgrey;
+  }
+  
+  
+  
+  .legal {
+	display: flex;
+	flex-wrap: wrap;
+	color: lightcyan;
+  }
+	
+  .legal__links {
+	display: flex;
+	align-items: center;
+  }
+  
+  .heart {
+	color: #2f2f2f;
+  }
+  
+  @media screen and (min-width: 24.375em) {
+	.legal .legal__links {
+	  margin-left: auto;
+	}
+  }
+
+
+  
+  @media screen and (min-width: 40.375em) {
+	.footer__nav > * {
+	  flex: 1;
+	}
+	
+	
+	.footer__addr {
+	  flex: 1 0px;
+	}
+	
+	.footer__nav {
+	  flex: 1 50px;
+	  
+	}
+
+  }
 
 /* login */
 .index_spacer{
@@ -279,6 +387,7 @@ section{
 	vertical-align: middle;
 	padding-bottom: 20px;
 	height:110%;
+	
 }
 
 .books h1
