@@ -8,7 +8,11 @@ def index():
 
 @app.route('/sign-in')
 def signin():
-    return render_template('signin.html')
+    return render_template('sign.html')
+
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
 
 @app.route('/iot-input', methods=['POST'])
 def receive_data():
