@@ -3,34 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
+    <title>Admin Panel</title>
     <style>
         body {
-            font-family:Arial;
+            font-family: Arial, sans-serif;
             background-color: #F5F5DC2;
             margin: 0;
             padding: 0;
         }
 
         header {
-	font-family:Jost;
-            background-color:#2b1b18;
+            background-color: #2b1b18;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
 
         h1 {
-
             margin: 0;
         }
 
         .container {
-            margin:0px; 
-            padding:20px;
-            background-color:rgb(226, 201, 135);
-            <!--border-radius: 5px;--> 
-           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(226, 201, 135);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
@@ -42,7 +39,6 @@
         }
 
         label {
-font-family:Jost;
             display: block;
             font-weight: bold;
         }
@@ -74,80 +70,29 @@ font-family:Jost;
         <h1>Admin Panel</h1>
     </header>
     <div class="container">
-        <h2>Add Book</h2>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="book-title">Book Title</label>
-                <input type="text" id="book-title" name="book-title" required>
-            </div>
-            <div class="form-group">
-                <label for="book-author">Author</label>
-                <input type="text" id="book-author" name="book-author" required>
-            </div>
-            <div class="form-group">
-                <label for="book-quantity">Quantity</label>
-                <input type="number" id="book-quantity" name="book-quantity" required>
-            </div>
-            <button type="submit">Add Book</button>
-        </form>
-<br>
-<br>
-        <h2>Delete Book</h2>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="delete-book-id">Book ID</label>
-                <input type="text" id="delete-book-id" name="delete-book-id" required>
-            </div>
-            <button type="submit">Delete Book</button>
-        </form>
-<br>
-<br>
-        <h2>Issue Register</h2>
-
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color:#2b1b18;
-            color: #fff;
-        }
-    </style>
-</head>
-<body>
- 
-    <table>
-        <thead>
-            <tr>
-                <th>Student Name</th>
-                <th>Admission Number</th>
-                <th>Book Title</th>
-                <th>Issue Date</th>
-                <th>Return Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td>Aneeka</td>
-                <td>12345</td>
-                <td>blah blah</td>
-                <td>20/09/2023</td>
-                <td>25/09/2023</td>
-            </tr>
-            
-        </tbody>
-    </table>
+        <h1>Welcome, Admin!</h1>
        
+
+        <!-- Buttons for Add Book, Delete Book, and View Issue History -->
+        <button id="add-book-btn">Add Book</button>
+        <button id="delete-book-btn">Delete Book</button>
+        <button id="view-issue-history-btn">View Issue History</button>
+
+        <!-- JavaScript to handle button clicks -->
+        <script>
+            // Redirect to the respective pages when buttons are clicked
+            document.getElementById("add-book-btn").addEventListener("click", function() {
+                window.location.href = "add-book.html"; // Replace with your add book page URL
+            });
+
+            document.getElementById("delete-book-btn").addEventListener("click", function() {
+                window.location.href = "delete-book.html"; // Replace with your delete book page URL
+            });
+
+            document.getElementById("view-issue-history-btn").addEventListener("click", function() {
+                window.location.href = "view-issue-history.html"; // Replace with your view issue history page URL
+            });
+        </script>
     </div>
 </body>
 </html>
