@@ -14,6 +14,11 @@ def signin():
 def admin():
     return render_template('admin.html')
 
+@app.route('/stud')
+def client():
+    my_name = "Joel Boby M"
+    return render_template('stud.html', my_name=my_name)
+
 @app.route('/iot-input', methods=['POST'])
 def receive_data():
     try:

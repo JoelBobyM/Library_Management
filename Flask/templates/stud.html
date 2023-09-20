@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=768, user-scalable=no" media="(min-width:768px)">
     <meta name="viewport" content="width=767, initial-scale=0.5" media="(max-width:767px)">
-    <title>e-Library | Admin</title>
+    <title>e-Library</title>
     <link rel="stylesheet" type="text/css" href="static/css/styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
     <header class="navbar">
@@ -15,12 +15,14 @@
             <ul class="nav__links">
                 <li>
                     <a href="sign-in">Sign In</a>
-                    <a href="#">Admin <span class="material-symbols-outlined">supervisor_account</span></a>
+                    <a href="#">{{ my_name }} <span class="material-symbols-outlined">
+                        person
+                        </span> </a>
                 </li>
             </ul>
         </nav>
     </header>
-    <div class="tab-admin">
+    <div class="tab-stud">
         <input type="radio" class="tab-toggle" name="tab-toggle" id="tab1" checked>
         <input type="radio" class="tab-toggle" name="tab-toggle" id="tab2">
         <input type="radio" class="tab-toggle" name="tab-toggle" id="tab3">
@@ -32,12 +34,7 @@
             <li class="tab-item">
                 <label class="tab-trigger" for="tab2">Issue Register (Complete)</label>
             </li>
-            <li class="tab-item">
-                <label class="tab-trigger" for="tab3">Add / Remove Book</label>
-            </li>
         </ul>
-
-            
         <section class="tab-container">
             <div class="tab-content">
                 <div class="tbl-header">

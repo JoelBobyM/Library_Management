@@ -469,11 +469,22 @@ section{
   }
 
   /* tab list 會動的底線 */
-  .tab-list::before {
+  .tab-admin .tab-list::before {
     content: '';
     display: block;
     height: 3px;
     width: 33.333%;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    transition: .3s;
+  }
+
+  .tab-stud .tab-list::before {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 50%;
     position: absolute;
     bottom: 0;
     background-color: white;
