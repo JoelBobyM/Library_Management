@@ -2,97 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #F5F5DC2;
-            margin: 0;
-            padding: 0;
-        }
+    <meta name="viewport" content="width=768, user-scalable=no" media="(min-width:768px)">
+    <meta name="viewport" content="width=767, initial-scale=0.5" media="(max-width:767px)">
+    <title>e-Library | Admin</title>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-        header {
-            background-color: #2b1b18;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            margin: 0;
-            padding: 20px;
-            background-color: rgb(226, 201, 135);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            margin-top: 0;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="number"] {
-            width: 30%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #2b1b18;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #555;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <h1>Admin Panel</h1>
+    <header class="navbar">
+        <a href="#" class="logo">CMPS <span>&escr;</span>-Library</a>
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="sign-in">Sign In</a>
+                    <a href="#my_footer">About Us</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <h1>Welcome, Admin!</h1>
-       
+    <div class="tab">
+        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab1" checked>
+        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab2">
+        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab3">
 
-        <!-- Buttons for Add Book, Delete Book, and View Issue History -->
-        <button id="add-book-btn">Add Book</button>
-        <button id="delete-book-btn">Delete Book</button>
-        <button id="view-issue-history-btn">View Issue History</button>
+        <ul class="tab-list">
+            <li class="tab-item">
+                <label class="tab-trigger" for="tab1">Issue Register (Active)</label>
+            </li>
+            <li class="tab-item">
+                <label class="tab-trigger" for="tab2">Issue Register (Complete)</label>
+            </li>
+            <li class="tab-item">
+                <label class="tab-trigger" for="tab3">Add / Remove Book</label>
+            </li>
+        </ul>
 
-        <!-- JavaScript to handle button clicks -->
-        <script>
-            // Redirect to the respective pages when buttons are clicked
-            document.getElementById("add-book-btn").addEventListener("click", function() {
-                window.location.href = "add-book.html"; // Replace with your add book page URL
-            });
+            
+        <section class="tab-container">
+            <div class="tab-content">
+                <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                            <th>Admission No.</th>
+                            <th>Student Name</th>
+                            <th>Book Title</th>
+                            <th>Issue Date</th>
+                            <th>Due Date</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
 
-            document.getElementById("delete-book-btn").addEventListener("click", function() {
-                window.location.href = "delete-book.html"; // Replace with your delete book page URL
-            });
-
-            document.getElementById("view-issue-history-btn").addEventListener("click", function() {
-                window.location.href = "view-issue-history.html"; // Replace with your view issue history page URL
-            });
-        </script>
+            <div class="tab-content">
+                <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                            <th>Admission No.</th>
+                            <th>Student Name</th>
+                            <th>Book Title</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
