@@ -322,67 +322,82 @@ section{
 
 
   /* Index page */
-
-  .search-container {
-	align-items: center;
-	width: 700px;
-	background: #fff;
-	border-radius: 5px;
-	height: 65px;
+  .input-box {
 	display: flex;
-	padding: 10px;
-	box-shadow: 0 8px 6px -10px #b3c6ff;
-	margin:auto;
-	height :70px;
+	justify-content: center;
+	position: relative;
+	height: 76px;
+	max-width: 900px;
+	width: 100%;
+	background: #fff;
+	margin: auto;
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 	margin-bottom: 30px;
-}
-
-/* Dropdown styling */
-.category-dropdown {
-	margin-right: 10px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 5px;
-	background-color: #fff;
-	height: 60px;
-	width: 120px;
-	
-}
-
-/* Search input styling */
-.search-input {
-	flex-grow: 1;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 5px;
-}
-
-/* Search button styling (optional) */
-.search-button {
-	background-color: #007bff;
-	color: #fff;
-	border: none;
-	border-radius: 3px;
-	padding: 8px 15px;
-	cursor: pointer;
-}
-
-/* Styling for dropdown arrow (optional) */
-.category-dropdown::after {
-	content: "\25BC"; /* Unicode down arrow character */
+  }
+  .input-box i,
+  .input-box .button {
 	position: absolute;
 	top: 50%;
-	right: 10px;
 	transform: translateY(-50%);
-}
+  }
+  .input-box i {
+	left: 20px;
+	font-size: 30px;
+	color: #707070;
+  }
+  .input-box input {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	font-size: 18px;
+	font-weight: 400;
+	border: none;
+	padding: 0 155px 0 65px;
+	background-color: transparent;
+  }
+  .input-box .button {
+	right: 20px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;
+	border: none;
+	padding: 12px 30px;
+	border-radius: 6px;
+	background-color: #2b1b18;
+	cursor: pointer;
+  }
+  .input-box .button:active {
+	transform: translateY(-50%) scale(0.98);
+  }
+  /* Responsive */
+  @media screen and (max-width: 500px) {
+	.input-box {
+	  height: 66px;
+	  margin: 0 8px;
+	}
+	.input-box i {
+	  left: 12px;
+	  font-size: 25px;
+	}
+	.input-box input {
+	  padding: 0 112px 0 50px;
+	}
+	.input-box .button {
+	  right: 12px;
+	  font-size: 14px;
+	  padding: 8px 18px;
+	}
+  }
+
+
 
 /* Fav Book */
 
 .books{
 	vertical-align: middle;
 	padding-bottom: 20px;
-	height:110%;
-	
+	min-height:750px;
 }
 
 .books h1
@@ -435,6 +450,17 @@ section{
 	transform: translate(-50%, -50%);
 	font-weight: bold;
 	font-size: 2em;
+	color: #fff;
+	font-family: Sans-serif;
+  }
+
+  .overlay p{
+	position: absolute;
+	left : 25%;
+	bottom: 10px;
+	transform: translate(-50%, -50%);
+	font-weight: bold;
+	font-size: 1em;
 	color: #fff;
 	font-family: Sans-serif;
   }
@@ -547,27 +573,28 @@ section{
 	background-color: #2b1b18;
    }
    .tab-content .tbl-content{
-	height:400px;
+	height:700px;
 	overflow-x:auto;
 	margin-top: 0px;
-	border: 1px solid #2b1b18;
+	border: 5px solid #2b1b18;
   }
   .tab-content th{
 	padding: 20px 15px;
 	text-align: center;
 	font-weight: bolder;
-	font-size: 12px;
+	font-size: 16px;
 	color: #fff;
 	text-transform: uppercase;
   }
   .tab-content td{
 	padding: 15px;
-	text-align: left;
+	text-align: center;
 	vertical-align:middle;
 	font-weight: 300;
-	font-size: 12px;
-	color: #fff;
-	border-bottom: solid 1px rgba(255,255,255,0.1);
+	font-weight: bold;
+	font-size: 16px;
+	color: #2b1b18;
+	border-bottom: solid 3px #2b1b18;
   }
   
 

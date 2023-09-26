@@ -15,11 +15,11 @@
 #define YLW_LED (4) //D2
 
 #ifndef STASSID
-#define STASSID "GENEXIS"
-#define STAPSK "14082020"
+#define STASSID "Galaxy M31"
+#define STAPSK "rinf8002"
 #endif
 
-const char* serverName = "http://192.168.1.21:8000/iot-input";
+const char* serverName = "http://192.168.118.63:8000/iot-input";
 
 Adafruit_PN532 nfc(PN532_SCK, PN532_MISO, PN532_MOSI, PN532_SS);
 

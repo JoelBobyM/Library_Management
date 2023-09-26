@@ -7,32 +7,31 @@
     <title>e-Library</title>
     <link rel="stylesheet" type="text/css" href="static/css/styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="static/js/script.js"></script>
 </head>
-<body>
+<body id="loggedinstud">
     <header class="navbar">
         <a href="#" class="logo">CMPS <span>&escr;</span>-Library</a>
         <nav>
             <ul class="nav__links">
                 <li>
-                    <a href="sign-in">Sign In</a>
-                    <a href="#">{{ my_name }} <span class="material-symbols-outlined">
-                        person
-                        </span> </a>
+                    <a href="sign-in">Sign Out</a>
+                    <a href="#" id = "my_name"></a>
                 </li>
             </ul>
         </nav>
     </header>
     <div class="tab-stud">
-        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab1" checked>
-        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab2">
-        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab3">
+        <input type="radio" class="tab-toggle" name="tab-toggle" id="ir_stud_act" checked>
+        <input type="radio" class="tab-toggle" name="tab-toggle" id="ir_stud_full">
 
         <ul class="tab-list">
             <li class="tab-item">
-                <label class="tab-trigger" for="tab1">Issue Register (Active)</label>
+                <label class="tab-trigger" for="ir_stud_act">Issue Register (Active)</label>
             </li>
             <li class="tab-item">
-                <label class="tab-trigger" for="tab2">Issue Register (Complete)</label>
+                <label class="tab-trigger" for="ir_stud_full">Issue Register (Complete)</label>
             </li>
         </ul>
         <section class="tab-container">
@@ -41,8 +40,7 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <thead>
                             <tr>
-                            <th>Admission No.</th>
-                            <th>Student Name</th>
+                            <th>ID</th>
                             <th>Book Title</th>
                             <th>Issue Date</th>
                             <th>Due Date</th>
@@ -52,7 +50,7 @@
                 </div>
                 <div class="tbl-content">
                     <table cellpadding="0" cellspacing="0" border="0">
-                    <tbody>
+                    <tbody id="ir_studact_tab_body">
                     </tbody>
                     </table>
                 </div>
@@ -63,10 +61,10 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <thead>
                             <tr>
-                            <th>Admission No.</th>
-                            <th>Student Name</th>
+                            <th>ID</th>
                             <th>Book Title</th>
                             <th>Issue Date</th>
+                            <th>Due Date</th>
                             <th>Return Date</th>
                             </tr>
                         </thead>
@@ -74,7 +72,7 @@
                 </div>
                 <div class="tbl-content">
                     <table cellpadding="0" cellspacing="0" border="0">
-                    <tbody>
+                    <tbody id = "ir_studfull_tab_body">
                     </tbody>
                     </table>
                 </div>
@@ -82,4 +80,15 @@
         </section>
     </div>
 </body>
+<script>
+    function storeDataInSession() 
+    {
+        var admn_no = "{{ admn_no }}";
+        sessionStorage.setItem('admn_no', admn_no);
+    }
+
+    // Call the function when the page loads
+    window.onload = storeDataInSession;
+
+</script>
 </html>

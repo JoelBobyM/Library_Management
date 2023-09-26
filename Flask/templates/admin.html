@@ -7,30 +7,32 @@
     <title>e-Library | Admin</title>
     <link rel="stylesheet" type="text/css" href="static/css/styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="static/js/script.js"></script>
 </head>
-<body>
+<body id = "loggedin">
     <header class="navbar">
         <a href="#" class="logo">CMPS <span>&escr;</span>-Library</a>
         <nav>
             <ul class="nav__links">
                 <li>
-                    <a href="sign-in">Sign In</a>
+                    <a href="sign-in">Sign Out</a>
                     <a href="#">Admin <span class="material-symbols-outlined">supervisor_account</span></a>
                 </li>
             </ul>
         </nav>
     </header>
     <div class="tab-admin">
-        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab1" checked>
-        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab2">
+        <input type="radio" class="tab-toggle" name="tab-toggle" id="ir_act" checked>
+        <input type="radio" class="tab-toggle" name="tab-toggle" id="ir_full">
         <input type="radio" class="tab-toggle" name="tab-toggle" id="tab3">
 
         <ul class="tab-list">
             <li class="tab-item">
-                <label class="tab-trigger" for="tab1">Issue Register (Active)</label>
+                <label class="tab-trigger" for="ir_act">Issue Register (Active)</label>
             </li>
             <li class="tab-item">
-                <label class="tab-trigger" for="tab2">Issue Register (Complete)</label>
+                <label class="tab-trigger" for="ir_full">Issue Register (Complete)</label>
             </li>
             <li class="tab-item">
                 <label class="tab-trigger" for="tab3">Add / Remove Book</label>
@@ -44,6 +46,7 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <thead>
                             <tr>
+                            <th>ID</th>
                             <th>Admission No.</th>
                             <th>Student Name</th>
                             <th>Book Title</th>
@@ -55,7 +58,7 @@
                 </div>
                 <div class="tbl-content">
                     <table cellpadding="0" cellspacing="0" border="0">
-                    <tbody>
+                    <tbody id="iract_tab_body">
                     </tbody>
                     </table>
                 </div>
@@ -66,10 +69,12 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <thead>
                             <tr>
+                            <th>ID</th>
                             <th>Admission No.</th>
                             <th>Student Name</th>
                             <th>Book Title</th>
                             <th>Issue Date</th>
+                            <th>Due Date</th>
                             <th>Return Date</th>
                             </tr>
                         </thead>
@@ -77,7 +82,7 @@
                 </div>
                 <div class="tbl-content">
                     <table cellpadding="0" cellspacing="0" border="0">
-                    <tbody>
+                    <tbody id="irfull_tab_body">
                     </tbody>
                     </table>
                 </div>

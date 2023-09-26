@@ -7,8 +7,10 @@
     <title>e-Library | CMPS</title>
     <link rel="stylesheet" type="text/css" href="static/css/styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
-</head>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="static/js/script.js"></script>
+  </head>
 <body>
     <header class="navbar">
         <a href="#" class="logo">CMPS <span>&escr;</span>-Library</a>
@@ -21,35 +23,33 @@
             </ul>
         </nav>
     </header>
-    
-    <div class="search-container">
-        <select class="category-dropdown">
-            <option value="category1">Category 1</option>
-            <option value="category2">Category 2</option>
-            <option value="category3">Category 3</option>
-        </select>
-        <input type="text" class="search-input" placeholder="Search...">
-        <button class="search-button">Search</button>
+    <div class="input-box">
+      <i class="uil uil-search"></i>
+      <input type="text" id="search-query" placeholder="Search Books here..." />
+      <button class="button" id="search-button">Search</button>
     </div>
     <section class="books">
-      <h1><b>Trending Collections</b></h1>
-      <div class="card-container">
+      <h1 id="card-title"><b>Trending Collections</b></h1>
+      <div class="card-container" id="card-container">
         <div class="card">
           <img src="https://cdn.kobo.com/book-images/07e6e6ff-c92f-413a-aaad-a9a00a671c92/1200/1200/False/the-martian-21.jpg" alt="" />
           <div class="overlay">
             <h2>The Martian</h2>
+            <p>Available</p>
           </div>
         </div>
         <div class="card">
           <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Wings_of_Fire_by_A_P_J_Abdul_Kalam_Book_Cover.jpg" alt="" />
           <div class="overlay">
             <h2>Wings of Fire</h2>
+            <p>Available </p>
           </div>
         </div>
         <div class="card">
           <img src="https://dcbookstore.com/uploads/product/images/44476287644115-daivathinte-charan.jpg" alt="" />
           <div class="overlay">
             <h2>Daivathinte Charanmar</h2>
+            <p>Available</p>
           </div>
         </div>
       </div>

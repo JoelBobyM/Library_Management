@@ -26,25 +26,29 @@
         <div class="main">  	
           <input type="checkbox" id="chk" aria-hidden="true">
           <div class="signup">
-            <form action="/client-side.html" method="POST">
+            <form action="/stud" method="POST">
               <label for="chk" aria-hidden="true">Login</label>
               <input type="id" name="id" placeholder="Admission Number" required value="{{id}}">
               <input type="password" name="password" placeholder="Password" required>
               <button type="submit">Login</button>
               {% if msg_lin %}
-                <p class="msg">&#x26A0; {{ msg_lin }}</p>
+              <script>
+                alert("{{ msg_lin }}");
+              </script>
               {% endif %}
             </form>
           </div>
           <div class="login">
-            <form required method="post" action="/">
+            <form required method="post" action="/sign-in">
               <label for="chk" aria-hidden="true">Sign up</label>
               <input type="text" name="fullname" placeholder="Full Name" required>
               <input type="id" name="id" placeholder="Admission Number" required>
               <input type="password" name="password" placeholder="Password" required>
               <button type="submit">Sign up</button>
               {% if msg_sup %}
-                <p class="msg">&#x26A0; {{ msg_sup }}</p>
+              <script>
+                alert("{{ msg_sup }}");
+              </script>
               {% endif %}
             </form>
           </div>
