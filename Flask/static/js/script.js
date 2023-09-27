@@ -1,34 +1,38 @@
-function fetchSearchResults() {
-    // Get the search query
+function fetchSearchResults() 
+{
     var searchQuery = $('#search-query').val();
-
     console.log(searchQuery);
-    
-    // Make an AJAX request to your Flask endpoint to fetch search results
     $.ajax({
         url: '/search-book',  // Update this to your search route
         type: 'POST',    // Use POST or GET as needed
         data: JSON.stringify({ 'search_query': searchQuery }),
         contentType: 'application/json',
-        success: function(data) {
-            // Clear the card container
+        success: function(data) 
+        {
             $('#card-container').empty();
-            
-            var newData = "<b> Search Result </b>";
-            $('#card-title').html(newData);
-            
-            // Loop through the search results and add cards to the container
-            for (var i = 0; i < data.length; i++) {
-                var book = data[i];
-                var cardHtml = '<div class="card">' +
-                    '<img src="' + book.image_url + '" alt="" />' +
-                    '<div class="overlay">' +
-                    '<h2>' + book.title + '</h2>' +
-                    '<p>' + book.status + '</p>' +
-                    '</div>' +
-                    '</div>';
-                $('#card-container').append(cardHtml);
+            if (data === 'No Result Found') 
+            {
+                var newData = "<b> No Results Found</b>";
+                $('#card-title').html(newData);
             }
+            else
+            {
+                var newData = "<b> Search Result </b>";
+                $('#card-title').html(newData);
+                for (var i = 0; i < data.length; i++) 
+                {
+                    var book = data[i];
+                    var cardHtml = '<div class="card">' +
+                        '<img src="' + book.image_url + '" alt="" />' +
+                        '<div class="overlay">' +
+                        '<h2>' + book.title + '</h2>' +
+                        '<p style="left:25%;">' + book.status + '</p>' +
+                        '</div>' +
+                        '</div>';
+                    $('#card-container').append(cardHtml);
+                }
+            }
+            
         },
         error: function(error) {
             console.error('Error:', error);
@@ -36,78 +40,74 @@ function fetchSearchResults() {
     });
 }
 
-function populateirTable(selectedTab,data) 
+function populateirTable(selectedTab, data) 
 {
-    if (selectedTab === "ir_full")
+    var tableBodyId = "";
+
+    switch (selectedTab) 
     {
-        var tableBody = document.getElementById("irfull_tab_body");
-    }
-    else if(selectedTab === "ir_act")
-    {
-        var tableBody = document.getElementById("iract_tab_body");
-    }
-    else if(selectedTab === "ir_stud_full")
-    {
-        var tableBody = document.getElementById("ir_studfull_tab_body");
-    }
-    else if (selectedTab === "ir_stud_act")
-    {
-        var tableBody = document.getElementById("ir_studact_tab_body");
+        case "ir_full":
+            tableBodyId = "irfull_tab_body";
+            break;
+        case "ir_act":
+            tableBodyId = "iract_tab_body";
+            break;
+        case "ir_stud_full":
+            tableBodyId = "ir_studfull_tab_body";
+            break;
+        case "ir_stud_act":
+            tableBodyId = "ir_studact_tab_body";
+            break;
+        default:
+            return; // Exit function if selectedTab is invalid
     }
 
+    var tableBody = document.getElementById(tableBodyId);
     tableBody.innerHTML = "";
 
-    data.forEach(function (book) 
-    {
-        console.log(data)
-        var row = document.createElement("tr");
+    if (data.length === 0) {
+        var noRecordRow = document.createElement("tr");
+        var noRecordCell = document.createElement("td");
+        noRecordCell.colSpan = 6; // Set colspan based on the number of columns in your table
+        noRecordCell.textContent = "No Record Found";
+        noRecordCell.style.fontSize = "40px";
+        noRecordRow.appendChild(noRecordCell);
+        tableBody.appendChild(noRecordRow);
+        return;
+    }
 
+    data.forEach(function(book) 
+    {
+        var row = document.createElement("tr");
         var titleCell = document.createElement("td");
         titleCell.textContent = book.Title;
-
         var issueCell = document.createElement("td");
         issueCell.textContent = book.Issue_Date;
-
         var issue_id = document.createElement("td");
         issue_id.textContent = book.Issue_ID;
-
         var dueCell = document.createElement("td");
         dueCell.textContent = book.Due_Date;
 
         var dateString = book.Due_Date;
         var parts = dateString.split('-');
         var dueDate = new Date(parts[2], parts[1] - 1, parts[0]);
-
         var currentDate = new Date();
 
-        console.log(dueDate);
-
-        if ((selectedTab === "ir_full")||(selectedTab === "ir_stud_full"))
+        if ((selectedTab === "ir_full" || selectedTab === "ir_stud_full") && (dueDate < currentDate && book.Return_Date === "N/A")) 
         {
-            if ((dueDate < currentDate)&&(book.Return_Date === "N/A")) 
-            {
-                row.style.backgroundColor = "red";
-            }
+            row.style.backgroundColor = "red";
+        } 
+        else if ((selectedTab === "ir_act" || selectedTab === "ir_stud_act") && dueDate < currentDate) 
+        {
+            row.style.backgroundColor = "red";
         }
-        else if ((selectedTab === "ir_act")||(selectedTab === "ir_stud_act"))
-        {
-            if (dueDate < currentDate)
-            {
-                row.style.backgroundColor = "red";
-            }
-        }
-        
-        if ((selectedTab === "ir_full")||(selectedTab === "ir_act"))
-        {
 
-            
+        if (selectedTab === "ir_full" || selectedTab === "ir_act") 
+        {
             var admissionCell = document.createElement("td");
             admissionCell.textContent = book.Admission_Number;
-
             var nameCell = document.createElement("td");
             nameCell.textContent = book.S_Name;
-
-            // Append cells to the row
             row.appendChild(issue_id);
             row.appendChild(admissionCell);
             row.appendChild(nameCell);
@@ -115,32 +115,31 @@ function populateirTable(selectedTab,data)
             row.appendChild(issueCell);
             row.appendChild(dueCell);
 
-            if(selectedTab == "ir_full")
+            if (selectedTab === "ir_full") 
             {
                 var returnCell = document.createElement("td");
                 returnCell.textContent = book.Return_Date;
                 row.appendChild(returnCell);
             }
-        }
-        else if ((selectedTab === "ir_stud_full")||(selectedTab === "ir_stud_act"))
+        } 
+        else if (selectedTab === "ir_stud_full" || selectedTab === "ir_stud_act") 
         {
             row.appendChild(issue_id);
             row.appendChild(titleCell);
             row.appendChild(issueCell);
             row.appendChild(dueCell);
 
-            if(selectedTab == "ir_stud_full")
+            if (selectedTab === "ir_stud_full") 
             {
                 var returnCell = document.createElement("td");
                 returnCell.textContent = book.Return_Date;
                 row.appendChild(returnCell);
             }
         }
-        
+
         tableBody.appendChild(row);
     });
 }
-
 
 function fetch_ir_data(selectedTab) 
 {
@@ -182,7 +181,6 @@ $(document).ready(function()
     // Add an event listener for the search button
     $('#search-button').click(function() 
     {
-        // Call the fetchSearchResults function when the button is clicked
         fetchSearchResults();
     });
 

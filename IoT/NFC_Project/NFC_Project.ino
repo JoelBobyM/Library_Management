@@ -15,11 +15,11 @@
 #define YLW_LED (4) //D2
 
 #ifndef STASSID
-#define STASSID "Galaxy M31"
-#define STAPSK "rinf8002"
+#define STASSID "Redmi"
+#define STAPSK "uxny0984"
 #endif
 
-const char* serverName = "http://192.168.118.63:8000/iot-input";
+String serverName = "http://192.168.95.63:8000";
 
 Adafruit_PN532 nfc(PN532_SCK, PN532_MISO, PN532_MOSI, PN532_SS);
 
@@ -41,6 +41,8 @@ String byteArrayToHexString(uint8_t* byteArray, uint8_t length)
 
 void setup()
 {
+  serverName += "/iot-input";
+
   pinMode(RED_LED, OUTPUT);
   pinMode(BLUE_LED, OUTPUT);
   pinMode(YLW_LED, OUTPUT);
@@ -134,7 +136,8 @@ void loop()
         http.begin(client, serverName);
         serializeJson(jsonDoc, jsonData);
         http.addHeader("Content-Type", "application/json");
-        // String httpRequestData = " { \"hello\" : \"world\" } ";  
+        http.addHeader("Bypass-Tunnel-Reminder", "cmps e_lib");
+
 
         int httpCode = http.POST(jsonData);
         const String& payload = http.getString();

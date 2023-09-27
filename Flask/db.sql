@@ -32,31 +32,21 @@ CREATE TABLE Issue_Register (
 
 INSERT INTO BOOKS VALUES('The Martian', 'Andy Weir',1,1);
 
-
 SELECT * FROM BOOKS
 
 SELECT * FROM Students
 
 SELECT * FROM Issue_Register;
 
+UPDATE Books SET NFC_UID = 'NULL' WHERE Book_ID = 2
 
-UPDATE Books SET NFC_UID = '897507C3' WHERE Book_ID = 2
-
-UPDATE Students SET NFC_UID = '132E5903' WHERE Admission_Number = '114PS'
-
-
-
-SELECT TOP 1 * FROM Issue_Register WHERE Admission_Number = '114PS' AND Book_ID = '2' AND Return_Date IS NULL
-
-
-
+UPDATE Students SET NFC_UID = '132E5903' WHERE Admission_Number = '2924PS'
 
 CREATE TRIGGER UpdateAvailableStatus
 ON Issue_Register
 AFTER INSERT, UPDATE
 AS
 BEGIN
-
     IF EXISTS (SELECT 1 FROM inserted WHERE Return_Date IS NULL)
     BEGIN
         UPDATE Books
