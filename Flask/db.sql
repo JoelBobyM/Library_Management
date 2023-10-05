@@ -38,9 +38,29 @@ SELECT * FROM Students
 
 SELECT * FROM Issue_Register;
 
-UPDATE Books SET NFC_UID = 'NULL' WHERE Book_ID = 2
+UPDATE Books SET Author = 'APJ Abdul Kalam' WHERE Book_ID = 2
+
+
 
 UPDATE Students SET NFC_UID = '132E5903' WHERE Admission_Number = '2924PS'
+
+INSERT INTO Students
+VALUES (
+    '2896PS',
+    'NIRANJANA AJI',
+    '897507C3',
+    NULL
+)
+
+
+INSERT INTO Books
+VALUES(
+    'A Brief History of Time',
+    'Stephen Hawking',
+    'https://upload.wikimedia.org/wikipedia/en/a/a3/BriefHistoryTime.jpg',
+    '042DD6223C7481',
+    1
+)
 
 CREATE TRIGGER UpdateAvailableStatus
 ON Issue_Register

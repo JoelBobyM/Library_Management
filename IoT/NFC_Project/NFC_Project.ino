@@ -15,11 +15,11 @@
 #define YLW_LED (4) //D2
 
 #ifndef STASSID
-#define STASSID "Redmi"
-#define STAPSK "uxny0984"
+#define STASSID "GENEXIS"
+#define STAPSK "14082020"
 #endif
 
-String serverName = "http://192.168.95.63:8000";
+String serverName = "http://192.168.1.12:8000";
 
 Adafruit_PN532 nfc(PN532_SCK, PN532_MISO, PN532_MOSI, PN532_SS);
 
