@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, make_response, g
 import pymssql
 import datetime
 
-server = 'localhost'
+server = '127.0.0.1'
 database = 'JOELBOBYM'
 username = 'SA'
 password = 'Jbm@21102001'
